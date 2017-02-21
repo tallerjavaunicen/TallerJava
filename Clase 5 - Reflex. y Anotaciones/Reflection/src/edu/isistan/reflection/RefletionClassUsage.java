@@ -19,7 +19,7 @@ public class RefletionClassUsage {
             //Invoking the method in the object
             m.invoke(o, "Hello world!! (through the looking glass)");
             m.invoke(o, "I am invoking the add method");
-            m.invoke(o, "using refletion!!!");
+            m.invoke(o, "using reflection!!!");
             
             //Checking that our object is an arraylist
             System.out.println("Is an ArrayList? " + (o instanceof java.util.ArrayList<?>));
