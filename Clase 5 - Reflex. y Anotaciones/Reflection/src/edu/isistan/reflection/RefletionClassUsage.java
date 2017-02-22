@@ -33,7 +33,7 @@ public class RefletionClassUsage {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             // What to do if there is an illegal access, like 
-            // calling a private method o constructor
+            // calling a private method or constructor
             e.printStackTrace();
         } catch (NoSuchMethodException e) {
             //What to do if there is not such method
