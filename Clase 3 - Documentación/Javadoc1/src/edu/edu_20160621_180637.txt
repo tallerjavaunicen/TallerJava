@@ -1,0 +1,9 @@
+WARNING - 18:06:37: First conversion pass
+ERROR - 18:06:37: java.net.MalformedURLException: unknown protocol: pathmap
+WARNING - 18:06:54: Convert edu
+WARNING - 18:06:54: First conversion pass
+ERROR - 18:07:11: org.xml.sax.SAXParseExceptionpublicId: -//W3C//DTD HTML 4.01 Transitional//EN; systemId: http://www.w3.org/TR/html4/loose.dtd; lineNumber: 31; columnNumber: 3; The declaration for the entity "HTML.Version" must end with '>'.
+ERROR - 18:07:11: org.xml.sax.SAXParseExceptionpublicId: -//W3C//DTD HTML 4.01 Transitional//EN; systemId: http://www.w3.org/TR/html4/loose.dtd; lineNumber: 31; columnNumber: 3; The declaration for the entity "HTML.Version" must end with '>'.
+WARNING - 18:07:31: First conversion pass
+ERROR - 18:07:47: org.xml.sax.SAXParseExceptionpublicId: -//W3C//DTD HTML 4.01 Transitional//EN; systemId: http://www.w3.org/TR/html4/loose.dtd; lineNumber: 31; columnNumber: 3; The declaration for the entity "HTML.Version" must end with '>'.
+ERROR - 18:07:47: org.xml.sax.SAXParseExceptionpublicId: -//W3C//DTD HTML 4.01 Transitional//EN; systemId: http://www.w3.org/TR/html4/loose.dtd; lineNumber: 31; columnNumber: 3; The declaration for the entity "HTML.Version" must end with '>'.

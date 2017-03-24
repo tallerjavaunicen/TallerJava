@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_qb8akM37EdqwVrslYOdUDA" name="Javadoc1">
+  <eAnnotations xmi:id="_KW5eAcYmEd-dJYwkGUnvHA" source="http://www.topcased.org/reverse">
+    <details xmi:id="_RmM9UMYmEd-dJYwkGUnvHA" key="PROJECT_CHARSET" value="Cp1252"/>
+  </eAnnotations>
+  <packagedElement xmi:type="uml:Package" xmi:id="_w8IxIM37EdqwVrslYOdUDA" name="Use Case View">
+    <packagedElement xmi:type="uml:Package" xmi:id="_Oug3IIBpEduoHLDxP0HEYA" name="Actors"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_R1l80IBpEduoHLDxP0HEYA" name="Analysis Classes"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_47DVYIBpEduoHLDxP0HEYA" name="Domain Classes"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="__ftVMIBpEduoHLDxP0HEYA" name="External Entities">
+      <packagedElement xmi:type="uml:Interaction" xmi:id="_xkzEEIBqEduoHLDxP0HEYA" name="External Entities Dynamic Data Flow General view"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_eruFQIBqEduoHLDxP0HEYA" name="Data Flow General View"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_gSuC0IBrEduoHLDxP0HEYA" name="MySystem">
+      <nestedClassifier xmi:type="uml:StateMachine" xmi:id="_uFnK8IBrEduoHLDxP0HEYA" name="MySystem Behavioural"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_GPdf0IBsEduoHLDxP0HEYA" name="AUseCase">
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_I859gIBsEduoHLDxP0HEYA" name="ASequenceDiagram"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_4UHtsIBoEduoHLDxP0HEYA" name="Logical View">
+    <packagedElement xmi:type="uml:Package" xmi:id="_LLvlME0uEd-ONPwW9OyryA" name="Source Artefacts"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Utn6QWmtEd-Hi4dLzjZ7BQ" name="Types">
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_umMdEDBmEeC3ksERX4P2Ow" name="void"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_1V1k4DBmEeC3ksERX4P2Ow" name="char"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_4IaaMDBmEeC3ksERX4P2Ow" name="int"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_-Gwn8DBmEeC3ksERX4P2Ow" name="short"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_8yzckThEEeCCiOmwUXA8rg" name="long"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_-l81MDhEEeCCiOmwUXA8rg" name="double"/>
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_AKRHoDhFEeCCiOmwUXA8rg" name="float"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_WDwmwGmtEd-Hi4dLzjZ7BQ" name="Libs"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_9yv5kIBoEduoHLDxP0HEYA" name="Component View">
+    <packagedElement xmi:type="uml:Component" xmi:id="_P8KOQNCzEdukztvu02l7OQ" name="AComponent Diagram by process"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_-mdtwNCyEdukztvu02l7OQ" name="Deployment View"/>
+</uml:Model>
