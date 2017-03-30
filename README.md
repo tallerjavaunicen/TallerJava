@@ -2,4 +2,4 @@
 Un taller de programación intermedio/avanzado de Java.
 
 ## Más información
-[Site del taller] (https://sites.google.com/alumnos.exa.unicen.edu.ar/tallerprogjava/)
+[Sitio del Taller de programación Java](https://sites.google.com/alumnos.exa.unicen.edu.ar/tallerprogjava/)
