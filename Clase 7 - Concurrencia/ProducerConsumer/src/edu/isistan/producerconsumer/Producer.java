@@ -3,9 +3,9 @@ package edu.isistan.producerconsumer;
 public class Producer implements Runnable {
     private int times;
     private int producerTime;
-    private Buffer<Integer> fixedBuffer;
+    private IBuffer<Integer> fixedBuffer;
     
-    public Producer(int times, int producerTime, Buffer<Integer>  fixedBuffer) {
+    public Producer(int times, int producerTime, IBuffer<Integer>  fixedBuffer) {
         this.times = times;
         this.producerTime = producerTime;
         this.fixedBuffer = fixedBuffer;

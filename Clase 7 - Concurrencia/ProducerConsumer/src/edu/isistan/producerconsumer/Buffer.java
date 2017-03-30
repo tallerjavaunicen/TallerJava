@@ -3,7 +3,7 @@ package edu.isistan.producerconsumer;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Buffer <T> {
+public class Buffer<T> implements IBuffer<T> {
 
     private List<T> elements;
     private int maxSize;
@@ -13,6 +13,10 @@ public class Buffer <T> {
         this.maxSize = i;
     }
 
+    /* (non-Javadoc)
+     * @see edu.isistan.producerconsumer.IBuffer#next()
+     */
+    @Override
     public synchronized T next() {
         String threadName = Thread.currentThread().getName();
         while (this.elements.isEmpty()) {
@@ -29,6 +33,10 @@ public class Buffer <T> {
         return el;
     }
 
+    /* (non-Javadoc)
+     * @see edu.isistan.producerconsumer.IBuffer#put(T)
+     */
+    @Override
     public synchronized void put(T i) {
         String threadName = Thread.currentThread().getName();
         while (this.elements.size() == this.maxSize) {

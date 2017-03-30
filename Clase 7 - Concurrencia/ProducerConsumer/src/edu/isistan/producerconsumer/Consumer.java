@@ -4,9 +4,9 @@ public class Consumer implements Runnable {
 
     private int times;
     private int consumerTime;
-    private Buffer<Integer> fixedBuffer;
+    private IBuffer<Integer> fixedBuffer;
     
-    public Consumer(int times, int consumerTime, Buffer<Integer> fixedBuffer) {
+    public Consumer(int times, int consumerTime, IBuffer<Integer> fixedBuffer) {
         this.times = times;
         this.consumerTime = consumerTime;
         this.fixedBuffer = fixedBuffer;

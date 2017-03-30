@@ -3,7 +3,7 @@ package edu.isistan.producerconsumer;
 public class Main {
 
     public static void main(String[] args) {
-        Buffer<Integer> fixedBuffer = new Buffer<>(10);
+        IBuffer<Integer> fixedBuffer = new Buffer<>(10); //new BufferLockCond<>(10);
         int times = 100;
         int consumerTime = 100;
         int producerTime = 50;
