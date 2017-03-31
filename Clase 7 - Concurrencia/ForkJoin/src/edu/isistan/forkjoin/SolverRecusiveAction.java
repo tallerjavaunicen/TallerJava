@@ -73,10 +73,7 @@ public class SolverRecusiveAction extends RecursiveAction {
             }
         }
         //Starts each evaluation
-        for(SolverRecusiveAction t: invokeAll(tasks)) {
-            //Wait until it ends
-            t.join();
-        }
+        invokeAll(tasks);
     }
 
     
@@ -87,7 +84,6 @@ public class SolverRecusiveAction extends RecursiveAction {
         ForkJoinPool pool = new ForkJoinPool();
         long time = System.currentTimeMillis();
         pool.invoke(spb);
-        spb.join();
         time = System.currentTimeMillis() - time;
         System.out.println(SOLUTION);
         System.out.println("Total time: "+ time +" ms.");

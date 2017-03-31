@@ -81,10 +81,7 @@ public class SolverRecusiveActionReadWriteLock extends RecursiveAction {
             }
         }
         //Starts each evaluation
-        for(SolverRecusiveActionReadWriteLock t: invokeAll(tasks)) {
-            //Wait until it ends
-            t.join();
-        }
+        invokeAll(tasks);
     }
 
     
@@ -95,7 +92,6 @@ public class SolverRecusiveActionReadWriteLock extends RecursiveAction {
         ForkJoinPool pool = new ForkJoinPool();
         long time = System.currentTimeMillis();
         pool.invoke(spb);
-        spb.join();
         time = System.currentTimeMillis() - time;
         System.out.println(SOLUTION);
         System.out.println("Total time: "+ time +" ms.");

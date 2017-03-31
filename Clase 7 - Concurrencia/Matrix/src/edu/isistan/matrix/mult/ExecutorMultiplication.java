@@ -15,23 +15,24 @@ public class ExecutorMultiplication implements IMultiplication {
         @SuppressWarnings("unchecked")
         Future<double[]>[] futures = (Future<double[]>[]) new Future<?>[a.length];
         for(int i = 0; i < a.length; i++)
-            futures[i] = executor.submit(new ExecuteComputation(a, b, i));
+            futures[i] = executor.submit(new RowComputation(a, b, i));
         for(int i = 0; i < a.length; i++)
             try {
                 result[i] = futures[i].get();
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
             }
+        executor.shutdown();
         return result;
     }
 
-    private class ExecuteComputation implements Callable<double[]>{
+    private class RowComputation implements Callable<double[]>{
 
         private double[][] a;
         private double[][] b;
         private int i;
         
-        public ExecuteComputation(double[][] a, double[][] b, int i) {
+        public RowComputation(double[][] a, double[][] b, int i) {
             super();
             this.a = a;
             this.b = b;

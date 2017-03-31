@@ -9,7 +9,7 @@ public class SemaphoreMultiplication implements IMultiplication {
         double[][] result = new double[a.length][b[0].length];
         Semaphore c =new Semaphore(0);
         for(int i = 0; i < a.length; i++)
-            (new Thread(new ExecuteComputation(a, b, result, i, c))).start();
+            (new Thread(new RowComputation(a, b, result, i, c))).start();
         try {
             c.acquire(a.length);
         } catch (InterruptedException e) {
@@ -19,7 +19,7 @@ public class SemaphoreMultiplication implements IMultiplication {
         return result;
     }
 
-    private class ExecuteComputation implements Runnable{
+    private class RowComputation implements Runnable{
 
         private double[][] a;
         private double[][] b;
@@ -27,7 +27,7 @@ public class SemaphoreMultiplication implements IMultiplication {
         private int i;
         private Semaphore control;
         
-        public ExecuteComputation(double[][] a, double[][] b, double[][] result, int i, Semaphore control) {
+        public RowComputation(double[][] a, double[][] b, double[][] result, int i, Semaphore control) {
             super();
             this.a = a;
             this.b = b;

@@ -7,7 +7,7 @@ public class MonitorMultiplication implements IMultiplication {
         double[][] result = new double[a.length][b[0].length];
         Control c = new Control(a.length);
         for(int i = 0; i < a.length; i++)
-            (new Thread(new ExecuteComputation(a, b, result, i, c))).start();
+            (new Thread(new RowComputation(a, b, result, i, c))).start();
         c.waitToFinish();
         return result;
     }
@@ -40,7 +40,7 @@ public class MonitorMultiplication implements IMultiplication {
         }
     }
     
-    private class ExecuteComputation implements Runnable{
+    private class RowComputation implements Runnable{
 
         private double[][] a;
         private double[][] b;
@@ -48,7 +48,7 @@ public class MonitorMultiplication implements IMultiplication {
         private int i;
         private Control control;
         
-        public ExecuteComputation(double[][] a, double[][] b, double[][] result, int i, Control control) {
+        public RowComputation(double[][] a, double[][] b, double[][] result, int i, Control control) {
             super();
             this.a = a;
             this.b = b;
