@@ -1,0 +1,23 @@
+apply plugin: 'application'
+mainClassName = "edu.unicen.tallerjava.todo.CollaborativeToDo"
+
+repositories {
+   	mavenCentral()
+    jcenter()
+}
+
+sourceSets {
+        main {
+                java {
+                        srcDirs "src/main/java"
+                }
+                resources {
+                        srcDirs "src/main/resources"
+                }
+        }
+}
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-web:1.5.2.RELEASE")
+}
+

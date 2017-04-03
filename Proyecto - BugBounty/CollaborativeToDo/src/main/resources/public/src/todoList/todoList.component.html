@@ -1,0 +1,50 @@
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h3 class="panel-title">TO-DOs</h3>
+    </div>
+    <div class="panel-body">
+        <button type="button" class="btn btn-primary agregar-todo-button" (click)="nuevoTodo()">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo TO-DO
+                </button>
+        <hr>
+        <div class="panel panel-default" *ngFor="let todo of todos">
+            <div class="panel-body" style="background-color: #ffe15b">
+                <div class="row">
+                    <div class="col-sm-10">{{todo.content}}</div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-sm btn-danger delete-todo-button" style="float:right" data-toggle="tooltip"
+                        data-placement="top" title="" data-original-title="Borrar TO-DO" (click)="borrarTodo(todo)">
+                          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:1em;">
+                    <div class="col-sm-12" style="text-align:right; font-style: italic">
+                        User: {{todo.user.name}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="addTodo">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Agregar TODO</h4>
+            </div>
+            <form #todoForm="ngForm" (ngSubmit)="guardarTodo()">
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="todoContent" name="name" style="width:100%; height:100%;" [(ngModel)]="todoContent">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
