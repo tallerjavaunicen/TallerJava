@@ -6,7 +6,7 @@ Importar como proyecto Gradle al IDE:
 
 # Ejecutar el proyecto
 
-Ir a la clase CollaborativeToDo y ejecutar el main. El frontend les va a tirar errores, ya que faltan las dependencias.
+Ir a la clase CollaborativeToDo y ejecutar el main. Acceder mediante http://localhost:8080. El frontend les va a tirar errores, ya que faltan las dependencias.
 
 # Obtener dependencias del frontend
 - Instalar nodejs.
