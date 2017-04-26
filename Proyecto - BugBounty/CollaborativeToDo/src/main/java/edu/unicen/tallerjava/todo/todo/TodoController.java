@@ -20,18 +20,18 @@ public class TodoController {
 	CurrentUserService currentSvc;
 
 	@RequestMapping(value = "/api/todo", method = RequestMethod.GET, produces = "application/json")
-	public @ResponseBody List<TODO> getTodoList() {
+	public @ResponseBody List<ToDo> getTodoList() {
 		return svc.getTodoList();
 	}
 
 	@RequestMapping(value = "/api/todo", method = RequestMethod.DELETE, produces = "application/json")
-	public void deleteTodo(@RequestBody TODO todo) {
+	public void deleteTodo(@RequestBody ToDo todo) {
 		svc.delete(todo.getId());
 	}
 
 	@RequestMapping(value = "/api/todo", method = RequestMethod.POST, produces = "application/json")
-	public @ResponseBody TODO getTodoList(@RequestBody TODO todo) {
-		TODO nuevo = new TODO();
+	public @ResponseBody ToDo getTodoList(@RequestBody ToDo todo) {
+		ToDo nuevo = new ToDo();
 		nuevo.setContent(todo.getContent());
 		nuevo.setUser(currentSvc.getCurrent());
 		nuevo.setId(UUID.randomUUID());

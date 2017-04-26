@@ -5,16 +5,16 @@ import java.util.UUID;
 
 import edu.unicen.tallerjava.todo.users.User;
 
-public class TODO {
+public class ToDo {
 	UUID id;
 	private User user;
 	private String content;
 	private Date date = new Date();
 
-	public TODO() {
+	public ToDo() {
 	}
 
-	public TODO(String content, User user, UUID id) {
+	public ToDo(String content, User user, UUID id) {
 		this.user = user;
 		this.content = content;
 		this.id = id;

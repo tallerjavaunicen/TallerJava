@@ -12,10 +12,12 @@ import edu.unicen.tallerjava.todo.log.LogService;
 public class CurrentUserService {
 	@Autowired
 	LogService svc;
-	
-	User current = new User();
+
+	User current;
 
 	public User getCurrent() {
+		if (current == null)
+			current = new User();
 		return current;
 	}
 

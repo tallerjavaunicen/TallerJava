@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import edu.unicen.tallerjava.todo.log.LogService;
 import edu.unicen.tallerjava.todo.users.CurrentUserService;
-import edu.unicen.tallerjava.todo.users.User;
 import edu.unicen.tallerjava.todo.users.UserService;
 
 @Service
@@ -25,25 +24,23 @@ public class TodoService {
 	@Autowired
 	CurrentUserService currentSvc;
 
-	ArrayList<TODO> todos = new ArrayList<>();
-	{
-		todos.add(new TODO("Hola Mundo!", new User("Usuario de Prueba"), UUID.randomUUID()));
-	}
+	ArrayList<ToDo> todos = new ArrayList<>();
 
-	public ArrayList<TODO> getTodoList() {
+	public ArrayList<ToDo> getTodoList() {
 		return todos;
 	}
 
-	public void addTODO(TODO todo) {
+	public void addTODO(ToDo todo) {
 		svc.addLog("Se agregó el todo " + todo.getContent(), todo.getUser());
+		todos.add(todo);
 		todos.add(todo);
 	}
 
 	public void delete(UUID id) {
-		Iterator<TODO> it = todos.iterator();
+		Iterator<ToDo> it = todos.iterator();
 		while (it.hasNext()) {
-			TODO todo = (TODO) it.next();
-			if (todo.getId().equals(id)) {
+			ToDo todo = (ToDo) it.next();
+			if (todo.getId() == id) {
 				svc.addLog("Se borró el todo " + todo.getContent(), currentSvc.getCurrent());
 				it.remove();
 				return;
@@ -51,13 +48,13 @@ public class TodoService {
 		}
 	}
 
-	public void borrarMensajesViejos() {
+	public void deleteOldMessages(int sec) {
 		Date current = new Date();
-		Iterator<TODO> it = todos.iterator();
+		Iterator<ToDo> it = todos.iterator();
 		while (it.hasNext()) {
-			TODO todo = (TODO) it.next();
+			ToDo todo = (ToDo) it.next();
 			long diff = current.getTime() - todo.getDate().getTime();
-			if (diff > 30 * 1000) {
+			if (diff < sec * 1000) {
 				svc.addLog("Se borró automáticamente el TODO, " + todo.getContent(), UserService.DEFAULT_USER);
 				it.remove();
 			}
@@ -66,12 +63,12 @@ public class TodoService {
 
 	@PostConstruct
 	public void init() {
-		Timer timer = new Timer();
+		Timer timer = new Timer("Delete Old Messages Thread");
 		timer.schedule(new TimerTask() {
 
 			@Override
 			public void run() {
-				borrarMensajesViejos();
+				deleteOldMessages(30);
 			}
 		}, 0, 1000);
 	}

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
 	@Autowired
 	UserService svc;
+
 	@Autowired
 	CurrentUserService currentSvc;
 
