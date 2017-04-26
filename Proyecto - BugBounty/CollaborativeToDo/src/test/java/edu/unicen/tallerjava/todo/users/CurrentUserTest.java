@@ -1,6 +1,6 @@
 package edu.unicen.tallerjava.todo.users;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
@@ -46,7 +46,7 @@ public class CurrentUserTest {
 			t1.join();
 			t2.join();
 
-			assertEquals(users[0], users[1]);
+			assertTrue(users[0]==users[1]);
 		}
 	}
 
@@ -76,7 +76,7 @@ public class CurrentUserTest {
 		t1.join();
 		t2.join();
 
-		assertEquals(users[0], user);
+		assertTrue(users[0]==user);
 	}
 
 	@After

@@ -74,7 +74,7 @@ public class TodoServiceTest {
 		todoService.addTODO(buildFakeTodo());
 		Thread.sleep(5 * 1000);
 
-		todoService.deleteOldMessages(7);
+		todoService.deleteOldMessages(11);
 
 		assertEquals(2, todoService.getTodoList().size());
 	}

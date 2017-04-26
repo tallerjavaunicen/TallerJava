@@ -48,7 +48,7 @@ public class TodoServiceMultiThreadTest {
 		}
 		exec.shutdown();
 		exec.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
-		assertEquals(todoService.getTodoList().size(), 1000);
+		assertEquals(1000, todoService.getTodoList().size());
 	}
 
 	@After
