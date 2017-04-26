@@ -15,7 +15,7 @@ Ir a la clase CollaborativeToDo y ejecutar el main. El frontend les va a tirar e
 npm install
 ```
 
-en src/main/resources/public (donde esté la carpeta package.json).
+en src/main/resources/public (donde esté el archivo package.json).
 
 # Construir el frontend
 
