@@ -38,6 +38,6 @@ Indicar:
 
  | Error Encontrado |                                                  | Solución |
  | ---------------- | ------------------------------------------------ | -------- |
- | ¿Por qué falla?  | ¿Donde falla? (Clase y método o línea de código) |          |
+ | ¿Por qué falla?  | ¿Dónde falla? (Clase y método o línea de código) |          |
  |                  |                                                  |          |
 
