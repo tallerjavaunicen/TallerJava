@@ -20,8 +20,10 @@ public class Microbenchmark {
 		return min;
 	}
 
-	// Correr con -XX:-PrintCompilation -XX:+UnlockDiagnosticVMOptions 
-	// -XX:CompileCommand=print,*Microbenchmark.getMinimum <- esto �ltimo imprime solo el m�todo getMinimum
+	// En VM args: -XX:+PrintCompilation (imprime las compilaciones)
+	// Con -XX:+UnlockDiagnosticVMOptions -XX:CompileCommand=print,*Microbenchmark.getMinimum
+	// se imprime el código assembly del método filtrado (getMinimum). Cuidado, porque pide bibliotecas nativas externas.
+	// Se pueden encontrar en google y se ponen en la base del proyecto.
 	public static void main(String[] args) throws IOException {
 		Microbenchmark micro = new Microbenchmark();
 		
