@@ -31,4 +31,8 @@ public class UserService {
 		users.clear();
 	}
 
+	public void setLogSvc(LogService logSvc) {
+		this.logSvc = logSvc;
+	}
+
 }

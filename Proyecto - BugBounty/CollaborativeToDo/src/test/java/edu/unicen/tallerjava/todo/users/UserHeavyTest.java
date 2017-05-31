@@ -11,19 +11,12 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import edu.unicen.tallerjava.todo.log.LogService;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserHeavyTest {
-	// Con esto usamos el verdadero servicio de log.
-	@Spy
-	private LogService service = new LogService();
-
-	@InjectMocks
 	UserService userService;
 
 	@Rule
@@ -31,6 +24,8 @@ public class UserHeavyTest {
 
 	@Before
 	public void setup() {
+		userService = new UserService();
+		userService.setLogSvc(new LogService());
 	}
 
 	@Test
