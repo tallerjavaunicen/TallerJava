@@ -12,10 +12,16 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import edu.unicen.tallerjava.todo.log.LogService;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserTest {
+	@Mock
+	LogService logSvc;
+	
 	@InjectMocks
 	UserService userService;
 
