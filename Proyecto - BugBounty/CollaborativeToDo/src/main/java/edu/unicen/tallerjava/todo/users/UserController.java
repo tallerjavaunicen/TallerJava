@@ -11,12 +11,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class UserController {
+class UserController {
 	@Autowired
-	UserService svc;
+    private
+    UserService svc;
 
 	@Autowired
-	CurrentUserService currentSvc;
+    private
+    CurrentUserService currentSvc;
 
 	@RequestMapping(value = "/api/currentuser", method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody User getCurrentUser() {

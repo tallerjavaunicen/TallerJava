@@ -5,9 +5,9 @@ import java.util.UUID;
 import edu.unicen.tallerjava.todo.users.User;
 
 public class Log {
-	UUID id;
-	String action;
-	User user;
+	private UUID id;
+	private String action;
+	private User user;
 
 	public Log(UUID id, String action, User user) {
 		super();

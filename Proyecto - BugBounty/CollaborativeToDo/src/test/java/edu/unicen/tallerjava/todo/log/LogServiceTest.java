@@ -19,10 +19,10 @@ import edu.unicen.tallerjava.todo.users.User;
 @RunWith(MockitoJUnitRunner.class)
 public class LogServiceTest {
 	@InjectMocks
-	LogService svc;
+	private LogService svc;
 
-	String[] events;
-	User user = new User();
+	private String[] events;
+	private User user = new User();
 
 	@Before
 	public void setup() {

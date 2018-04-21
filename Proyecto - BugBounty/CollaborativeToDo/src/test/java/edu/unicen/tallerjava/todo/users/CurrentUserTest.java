@@ -28,7 +28,7 @@ public class CurrentUserTest {
 	public void checkCurrent() throws InterruptedException {
 		for (int i = 0; i < 100; i++) {
 			// En este caso creamos una instancia separada para crear uno nuevo
-			// en cada iteración
+			// en cada iteraciï¿½n
 			CurrentUserService testSvc = new CurrentUserService();
 
 			final User[] users = new User[2];
@@ -66,14 +66,13 @@ public class CurrentUserTest {
 		Thread t1 = new Thread(() -> {
 			currentUserSvc.setCurrent(user);
 		});
+		t1.start();
+		t1.join();
+		
 		Thread t2 = new Thread(() -> {
 			users[0] = currentUserSvc.getCurrent();
-		});
-
-		t1.start();
-		t2.start();
-
-		t1.join();
+		});		
+		t2.start();		
 		t2.join();
 
 		assertTrue(users[0]==user);

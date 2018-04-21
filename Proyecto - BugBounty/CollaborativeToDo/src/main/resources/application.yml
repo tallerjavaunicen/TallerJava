@@ -1,0 +1,5 @@
+spring.datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:todoapp;MODE=MySQL
+
+hibernate.hbm2ddl.auto: create-drop

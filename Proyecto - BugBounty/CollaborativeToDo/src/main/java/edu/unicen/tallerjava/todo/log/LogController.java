@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class LogController {
+class LogController {
 	@Autowired
-	LogService svc;
+    private
+    LogService svc;
 	
 	@RequestMapping(value = "/api/log", method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody List<Log> getTodoList() {

@@ -1,11 +1,6 @@
 package edu.unicen.tallerjava.todo.todo;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.UUID;
+import java.util.*;
 
 import javax.annotation.PostConstruct;
 
@@ -18,58 +13,58 @@ import edu.unicen.tallerjava.todo.users.UserService;
 
 @Service
 public class TodoService {
-	@Autowired
-	LogService svc;
+    @Autowired
+    private
+    LogService svc;
 
-	@Autowired
-	CurrentUserService currentSvc;
+    @Autowired
+    CurrentUserService currentSvc;
 
-	ArrayList<ToDo> todos = new ArrayList<>();
+    @Autowired
+    private
+    TodoRepository repo;
 
-	public ArrayList<ToDo> getTodoList() {
-		return todos;
-	}
+    // ArrayList<ToDo> todos = new ArrayList<>();
 
-	public void addTODO(ToDo todo) {
-		svc.addLog("Se agregÛ el todo " + todo.getContent(), todo.getUser());
-		todos.add(todo);
-		todos.add(todo);
-	}
+    public List<ToDo> getTodoList() {
+        Iterable<ToDo> all = repo.findAll();
+        ArrayList<ToDo> r = new ArrayList<>();
+        for (ToDo t :
+                all)
+            r.add(t);
+        return r;
+    }
 
-	public void delete(UUID id) {
-		Iterator<ToDo> it = todos.iterator();
-		while (it.hasNext()) {
-			ToDo todo = (ToDo) it.next();
-			if (todo.getId() == id) {
-				svc.addLog("Se borrÛ el todo " + todo.getContent(), currentSvc.getCurrent());
-				it.remove();
-				return;
-			}
-		}
-	}
+    public synchronized void addTODO(ToDo todo) {
+        svc.addLog("Se agreg√≥ el todo " + todo.getContent(), todo.getUser());
+        repo.save(todo);
+        // todos.add(todo);
+    }
 
-	public void deleteOldMessages(int sec) {
-		Date current = new Date();
-		Iterator<ToDo> it = todos.iterator();
-		while (it.hasNext()) {
-			ToDo todo = (ToDo) it.next();
-			long diff = current.getTime() - todo.getDate().getTime();
-			if (diff < sec * 1000) {
-				svc.addLog("Se borrÛ autom·ticamente el TODO, " + todo.getContent(), UserService.DEFAULT_USER);
-				it.remove();
-			}
-		}
-	}
+    public void delete(UUID id) {
+        repo.delete(id);
+    }
 
-	@PostConstruct
-	public void init() {
-		Timer timer = new Timer("Delete Old Messages Thread");
-		timer.schedule(new TimerTask() {
+    public synchronized void deleteOldMessages(int sec) {
+        Date current = new Date();
+        for (ToDo todo : getTodoList()) {
+            long diff = current.getTime() - todo.getDate().getTime();
+            if (diff >= sec * 1000) {
+                svc.addLog("Se borr√≥ autom√°ticamente el todo, " + todo.getContent(), UserService.DEFAULT_USER);
+                repo.delete(todo);
+            }
+        }
+    }
 
-			@Override
-			public void run() {
-				deleteOldMessages(30);
-			}
-		}, 0, 1000);
-	}
+    @PostConstruct
+    public void init() {
+        Timer timer = new Timer("Delete Old Messages Thread");
+        timer.schedule(new TimerTask() {
+
+            @Override
+            public void run() {
+                deleteOldMessages(30);
+            }
+        }, 0, 1000);
+    }
 }

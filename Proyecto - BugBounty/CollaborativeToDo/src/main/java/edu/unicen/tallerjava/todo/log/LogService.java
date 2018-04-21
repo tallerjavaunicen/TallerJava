@@ -10,14 +10,18 @@ import edu.unicen.tallerjava.todo.users.User;
 
 @Service
 public class LogService {
-	List<Log> logs = new ArrayList<>();
+	private final List<Log> logs = new ArrayList<>();
 
 	public List<Log> getLogs() {
 		return logs;
 	}
 
-	public void addLog(String action, User user) {
+	public synchronized void addLog(String action, User user) {
 		Log log = new Log(UUID.randomUUID(), action, user);
 		logs.add(log);
+	}
+
+	public void clear() {
+		this.logs.clear();
 	}
 }
