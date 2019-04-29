@@ -48,10 +48,10 @@ public class Microbenchmark {
 			list[i] = intList.get(i);
 		}
 
-		// // Warm-up
-		// for (int i = 0; i < 1000; i++) {
-		// micro.getMinimum(list);
-		// }
+		// Warm-up
+		for (int i = 0; i < 1000; i++) {
+			micro.getMinimum(list);
+		}
 
 		long init = System.nanoTime();
 		int min = micro.getMinimum(list);

@@ -1,4 +1,4 @@
-package unice.tallerjava.ejemplojmh;
+package unicen.tallerjava.ejemplojmh;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;

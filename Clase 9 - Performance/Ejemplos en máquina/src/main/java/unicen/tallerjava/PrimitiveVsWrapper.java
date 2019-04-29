@@ -36,12 +36,12 @@ public class PrimitiveVsWrapper {
 			prim.getMaximumInt(ints);
 		}
 
-		long init = System.nanoTime();
-		prim.getMaximum(integers);
-		System.out.println(System.nanoTime() - init + " ns");
+//		long init = System.nanoTime();
+//		prim.getMaximum(integers);
+//		System.out.println(System.nanoTime() - init + " ns");
 
-		// init = System.nanoTime();
-		// prim.getMaximumInt(ints);
-		// System.out.println(System.nanoTime() - init + " ns");
+		long init = System.nanoTime();
+		 prim.getMaximumInt(ints);
+		 System.out.println(System.nanoTime() - init + " ns");
 	}
 }

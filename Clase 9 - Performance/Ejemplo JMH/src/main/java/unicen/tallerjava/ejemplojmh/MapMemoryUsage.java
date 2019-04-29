@@ -1,4 +1,4 @@
-package unice.tallerjava.ejemplojmh;
+package unicen.tallerjava.ejemplojmh;
 
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;

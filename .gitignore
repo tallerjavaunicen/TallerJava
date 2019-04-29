@@ -13,3 +13,11 @@ hs_err_pid*
 Proyecto - BugBounty/CollaborativeToDo/.idea/
 Proyecto - BugBounty/CollaborativeToDo/out/
 *.iml
+Proyecto - BugBounty/CollaborativeToDo/src/main/resources/public/package-lock.json
+target/
+.idea/
+.settings
+.vscode/
+.project
+.classpath
+.factorypath
