@@ -16,15 +16,13 @@ import edu.unicen.tallerjava.todo.users.UserService;
 @Service
 public class TodoService {
     @Autowired
-    private
-    LogService svc;
+    private LogService svc;
 
     @Autowired
     CurrentUserService currentSvc;
 
     @Autowired
-    private
-    TodoRepository repo;
+    private TodoRepository repo;
 
     public List<ToDo> getTodoList() {
         return StreamSupport.stream(repo.findAll().spliterator(), false).collect(Collectors.toList());

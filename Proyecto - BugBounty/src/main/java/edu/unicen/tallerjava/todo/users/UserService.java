@@ -13,18 +13,15 @@ import javax.annotation.PostConstruct;
 @Service
 public class UserService {
     @Autowired
-    private
-    LogService logSvc;
+    private LogService logSvc;
 
     public static final User DEFAULT_USER = new User("Admin", 0);
 
     @Autowired
-    private
-    CurrentUserService currentSvc;
+    private CurrentUserService currentSvc;
 
     @Autowired
-    private
-    UserRepository repo;
+    private UserRepository repo;
 
     @PostConstruct
     public void setup() {

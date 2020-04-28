@@ -11,8 +11,7 @@ import edu.unicen.tallerjava.todo.log.LogService;
 @Scope(scopeName = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class CurrentUserService {
 	@Autowired
-    private
-    LogService svc;
+    private LogService svc;
 
 	private User current;
 
