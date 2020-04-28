@@ -1,0 +1,99 @@
+<div class="card card-warning">
+  <div class="card-header">
+    TO-DOs
+  </div>
+  <div class="card-body">
+    <button
+      type="button"
+      class="btn btn-primary agregar-todo-button"
+      (click)="nuevoTodo()"
+    >
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo
+      TO-DO
+    </button>
+    <hr />
+    <div
+      class="card card-default"
+      *ngFor="let todo of todos"
+      style="margin-bottom: 1rem;"
+    >
+      <div class="card-body" style="background-color: #ffe15b;">
+        <div class="row">
+          <div class="col-sm-10">{{ todo.content }}</div>
+          <div class="col-sm-2">
+            <button
+              type="button"
+              class="btn btn-sm btn-danger delete-todo-button"
+              style="float: right;"
+              data-toggle="tooltip"
+              data-placement="top"
+              title=""
+              data-original-title="Borrar TO-DO"
+              (click)="borrarTodo(todo)"
+            >
+              <svg
+                class="bi bi-trash-fill"
+                width="1em"
+                height="1em"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 1a1 1 0 00-1 1v1a1 1 0 001 1H3v9a2 2 0 002 2h6a2 2 0 002-2V4h.5a1 1 0 001-1V2a1 1 0 00-1-1H10a1 1 0 00-1-1H7a1 1 0 00-1 1H2.5zm3 4a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7a.5.5 0 01.5-.5zM8 5a.5.5 0 01.5.5v7a.5.5 0 01-1 0v-7A.5.5 0 018 5zm3 .5a.5.5 0 00-1 0v7a.5.5 0 001 0v-7z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 1em;">
+          <div class="col-sm-12" style="text-align: right; font-style: italic;">
+            User: {{ todo.user.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" id="addTodo">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Agregar TODO</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form #todoForm="ngForm" (ngSubmit)="guardarTodo()">
+        <div class="modal-body">
+          <div class="modal-body">
+            <input
+              type="text"
+              class="form-control"
+              id="todoContent"
+              name="name"
+              style="width: 100%; height: 100%;"
+              [(ngModel)]="todoContent"
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary" type="submit">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- /.modal -->
